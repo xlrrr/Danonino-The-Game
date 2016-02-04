@@ -55,26 +55,5 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/shardIcon"
-        android:background="@drawable/shard"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_alignTop="@+id/label"
-        android:layout_toRightOf="@+id/label"
-        android:layout_toEndOf="@+id/label" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0 :"
-        android:id="@+id/shardText"
-        android:layout_alignBottom="@+id/settings_btn"
-        android:layout_toRightOf="@+id/shardIcon"
-        android:layout_toEndOf="@+id/shardIcon" />
-
-
 
 </RelativeLayout>

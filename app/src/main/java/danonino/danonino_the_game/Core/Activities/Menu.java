@@ -48,9 +48,6 @@ public class Menu extends Activity {
     private RelativeLayout layout;
     private ImageButton startBtn;
     private Button settingsBtn;
-    private ImageButton shardBtn;
-    private TextView shardText;
-//    private AdView mAdView;
 
     private boolean continuePlaying;
 
@@ -66,25 +63,10 @@ public class Menu extends Activity {
         MusicManager.start(getApplicationContext(),MusicManager.MUSIC_MENU);
         ShardsContainer.load(getBaseContext());
 
-        /*mAdView = (AdView) findViewById(R.id.ad_view);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-
-        // Start loading the ad in the background.
-        mAdView.loadAd(adRequest);
-        */
 
         this.startBtn = (ImageButton) findViewById(R.id.start_btn);
         this.settingsBtn = (Button) findViewById(R.id.settings_btn);
         this.layout = (RelativeLayout) findViewById(R.id.layout);
-        this.shardBtn =(ImageButton)findViewById(R.id.shardIcon);
-        this.shardBtn.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.shard));
-
-        this.shardText = (TextView) findViewById(R.id.shardText);
-        this.shardText.setText(": " + ShardsContainer.getShards());
-        this.shardText.setTextSize(GamePanel.getHEIGHT() / 36);
-        this.shardText.setTypeface(Data.getTypeFace());
 
         Drawable bg = ContextCompat.getDrawable(getApplicationContext(), R.drawable.menubackground);
         this.layout.setBackground(bg);
@@ -144,31 +126,6 @@ public class Menu extends Activity {
             }
         });
 
-        this.shardBtn.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getActionMasked()) {
-                    case MotionEvent.ACTION_DOWN: {
-                        ImageButton view = (ImageButton) v;
-                        view.getBackground().setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
-                        v.invalidate();
-                        break;
-                    }
-                    case MotionEvent.ACTION_UP:
-                        continuePlaying = true;
-                        Intent i = new Intent(getBaseContext(), Shop.class);
-                        startActivity(i);
-
-                    case MotionEvent.ACTION_CANCEL: {
-                        ImageButton view = (ImageButton) v;
-                        view.getBackground().clearColorFilter();
-                        view.invalidate();
-                        break;
-                    }
-                }
-                return true;
-            }
-        });
     }
 
     @Override
@@ -176,10 +133,6 @@ public class Menu extends Activity {
          if(!continuePlaying) {
             MusicManager.pause();
         }
-        /*
-        if (mAdView != null) {
-            mAdView.pause();
-        }*/
         super.onPause();
 
     }
@@ -189,20 +142,10 @@ public class Menu extends Activity {
         super.onResume();
         this.continuePlaying=false;
         MusicManager.start(this, MusicManager.MUSIC_MENU);
-        this.shardText.setText(": " + ShardsContainer.getShards());
-        /*
-        if (mAdView != null) {
-            mAdView.resume();
-        }*/
     }
 
     @Override
     protected void onDestroy() {
-        /*
-        if (mAdView != null) {
-            mAdView.destroy();
-        }
-        */
         SoundManager.release();
         MusicManager.release();
         super.onDestroy();

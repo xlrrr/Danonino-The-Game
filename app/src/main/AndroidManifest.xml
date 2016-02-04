@@ -50,15 +50,6 @@
                 </intent-filter>
             </activity>
 
-            <activity
-                android:name="danonino.danonino_the_game.Core.Activities.Shop"
-                android:screenOrientation="landscape">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-                    <category android:name="android.intent.category.LAUNCHERS" />
-                </intent-filter>
-            </activity>
-
 
         </application>
     </manifest>
