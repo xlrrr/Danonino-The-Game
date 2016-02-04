@@ -146,9 +146,9 @@
             android:text="MOVEMENT"
             android:id="@+id/joy_lbl"
             android:textSize="25dp"
-            android:layout_below="@+id/ad_view"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="56dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
         <ToggleButton
             android:layout_width="wrap_content"
