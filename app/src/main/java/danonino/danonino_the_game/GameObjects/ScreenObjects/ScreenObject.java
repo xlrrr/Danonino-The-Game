@@ -32,7 +32,21 @@ public abstract class ScreenObject extends GameObject {
     private boolean isEating;
     private boolean stunned;
     private Animation animation = new Animation();
+
+    public Bitmap getFishImage() {
+        return fishImage;
+    }
+
     private Bitmap fishImage;
+
+    public Bitmap[][] getImage() {
+        return image;
+    }
+
+    public void setImage(Bitmap[][] image) {
+        this.image = image;
+    }
+
     private Bitmap[][] image;
     private int gold = 0;
     private int aquaShield = 0;
@@ -214,21 +228,6 @@ public abstract class ScreenObject extends GameObject {
         }
     }
 
-    public void updateBitmap(){
-        /*Bitmap resized = Bitmap.createScaledBitmap(fishImage,
-                (int)(fishImage.getWidth()*0.25*(this.getCurrentLevel().getValue()+1)),
-                (int)(fishImage.getHeight()*0.25*(this.getCurrentLevel().getValue()+1)),
-                true);
-                */
-        Bitmap resized = Bitmap.createScaledBitmap(fishImage,
-                (int)(fishImage.getWidth()*0.95),
-                (int)(fishImage.getHeight()*0.95),
-                true);
-        this.getFrameDimensions(resized);
-        this.image = this.createBitmap(resized);
-        this.animation.setFrames(this.image);
-    }
-
     public void draw(Canvas canvas)
     {
         if(!this.isDead()) {
@@ -240,7 +239,7 @@ public abstract class ScreenObject extends GameObject {
         }
     }
 
-    private void getFrameDimensions(Bitmap frame){
+    public void getFrameDimensions(Bitmap frame){
         this.height = frame.getHeight()/this.numRows;
         this.width = frame.getWidth()/this.numFrames;
     }

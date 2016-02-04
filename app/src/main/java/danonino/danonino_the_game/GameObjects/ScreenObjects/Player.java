@@ -42,7 +42,7 @@ public class Player extends ScreenObject {
         super(res, STARTING_PLAYER_LEVEL, PLAYER_NUMROWS, PLAYER_NUMFRAMES);
         this.updateBitmap();
         this.setX(GamePanel.getWIDTH() / 2);
-        this.setY(GamePanel.getHEIGHT() / 2);
+        this.setY(GamePanel.getHEIGHT()-this.getHeight());
         this.setScore(STARTING_PLAYER_SCORE);
     }
 
@@ -59,13 +59,7 @@ public class Player extends ScreenObject {
 
     @Override
     public void setY(int yCurrent) {
-        if(yCurrent<0){
-            yCurrent=0;
-        }
-        else if(yCurrent+this.getHeight()>GamePanel.getHEIGHT()){
-            yCurrent=GamePanel.getHEIGHT()-this.getHeight();
-        }
-        super.setY(yCurrent);
+        super.setY(GamePanel.getHEIGHT()-this.getHeight());
     }
 
     public int getScore() {
@@ -78,6 +72,17 @@ public class Player extends ScreenObject {
 
     public void setPowerUpActivated(boolean powerUpActivated) {
         this.powerUpActivated = powerUpActivated;
+    }
+
+    private void updateBitmap(){
+
+        Bitmap resized = Bitmap.createScaledBitmap(getFishImage(),
+                (int)(getFishImage().getWidth()*1.25),
+                (int)(getFishImage().getHeight()*1.25),
+                true);
+        this.getFrameDimensions(resized);
+        this.setImage(this.createBitmap(resized));
+        this.getAnimation().setFrames(this.getImage());
     }
 
     @Override
