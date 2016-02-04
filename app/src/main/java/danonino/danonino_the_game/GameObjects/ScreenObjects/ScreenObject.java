@@ -17,7 +17,7 @@
  * along with "Danonino The Game".  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package danonino.danonino_the_game.GameObjects.Fish;
+package danonino.danonino_the_game.GameObjects.ScreenObjects;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -26,7 +26,7 @@ import danonino.danonino_the_game.Entity.Animation;
 import danonino.danonino_the_game.Enums.Level;
 import danonino.danonino_the_game.GameObjects.GameObject;
 
-public abstract class Fish extends GameObject {
+public abstract class ScreenObject extends GameObject {
     //animation
     private int currentAction;
     private boolean isEating;
@@ -50,14 +50,14 @@ public abstract class Fish extends GameObject {
     private boolean dead;
     private long startTime;
 
-    public Fish(Bitmap res, Level level, int numRows, int numFrames) {
+    public ScreenObject(Bitmap res, Level level, int numRows, int numFrames) {
         this.numRows = numRows;
         this.numFrames = numFrames;
         this.setCurrentLevel(level);
         this.fishImage=res;
         this.getFrameDimensions(fishImage);
         this.setX(this.getRandomX());
-        this.setY(this.getRandomY());
+        this.setY(-this.getHeight());
 
         this.setPlaying(true);
         this.setDead(false);

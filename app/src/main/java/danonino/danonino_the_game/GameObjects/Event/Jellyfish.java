@@ -23,7 +23,7 @@ import android.graphics.Bitmap;
 import android.os.SystemClock;
 
 import danonino.danonino_the_game.Entity.ScoreContainer;
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 
 public class Jellyfish extends Event {
     private static final int JELLYFISH_NUMROWS = 1;

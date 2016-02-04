@@ -48,8 +48,8 @@ import danonino.danonino_the_game.Factory.EnemyFishFactory;
 import danonino.danonino_the_game.Factory.EventFactory;
 import danonino.danonino_the_game.GameObjects.Event.Event;
 import danonino.danonino_the_game.GameObjects.Event.Goldfish;
-import danonino.danonino_the_game.GameObjects.Fish.Enemy;
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Fruit;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 import danonino.danonino_the_game.Music.SoundManager;
 
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
@@ -62,7 +62,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     private Background bgFront;
     private Player player;
     private ProgressBar progress;
-    private ArrayList<Enemy> enemies;
+    private ArrayList<Fruit> enemies;
     private ArrayList<Bubble> bubbles;
     private Joystick joystick;
     private Event event;
@@ -220,7 +220,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             currentBubble.update();
         }
         for (int i = 0; i < this.enemies.size(); i++) {
-            Enemy currentEnemy = this.enemies.get(i);
+            Fruit currentEnemy = this.enemies.get(i);
             if (currentEnemy.isDead()) {
                 this.enemies.remove(i);
                 continue;
@@ -268,7 +268,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                 b.draw(canvas);
             }
             //draw enemies
-            for(Enemy e: this.enemies)
+            for(Fruit e: this.enemies)
             {
                 e.draw(canvas);
             }

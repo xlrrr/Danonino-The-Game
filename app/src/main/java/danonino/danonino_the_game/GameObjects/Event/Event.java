@@ -25,7 +25,7 @@ import android.graphics.Canvas;
 import danonino.danonino_the_game.Core.GamePanel;
 import danonino.danonino_the_game.Entity.Animation;
 import danonino.danonino_the_game.Entity.EnemySpeedGenerator;
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 import danonino.danonino_the_game.GameObjects.GameObject;
 
 public abstract class Event extends GameObject {
@@ -46,7 +46,7 @@ public abstract class Event extends GameObject {
         this.height = res.getHeight() / this.numRows;
         this.width = res.getWidth() / this.numFrames;
         this.setX(this.getRandomX());
-        this.setY(this.getRandomY());
+        this.setY(-this.getHeight());
         this.setSpeedX(directionMultiplier * speedGen.generateXspeed());
         this.setSpeedY(speedGen.generateYspeed());
 

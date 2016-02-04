@@ -29,7 +29,7 @@ import android.graphics.Shader;
 
 import danonino.danonino_the_game.Core.Data;
 import danonino.danonino_the_game.Core.GamePanel;
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 
 public class ProgressBar {
 

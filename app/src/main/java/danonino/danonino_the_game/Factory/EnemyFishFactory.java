@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import danonino.danonino_the_game.Enums.Level;
-import danonino.danonino_the_game.GameObjects.Fish.Enemy;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Fruit;
 
 public class EnemyFishFactory {
 
@@ -51,10 +51,10 @@ public class EnemyFishFactory {
         enemyFish.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.level4_enemy));
     }
 
-    public static Enemy Create() {
+    public static Fruit Create() {
         Level currentLevel = getLevel();
         Bitmap currentBitmap = getBitmap(currentLevel);
-        return new Enemy(currentBitmap, currentLevel, currentNumRows, currentNumFrames);
+        return new Fruit(currentBitmap, currentLevel, currentNumRows, currentNumFrames);
     }
 
     private static Bitmap getBitmap(Level currentLevel) {

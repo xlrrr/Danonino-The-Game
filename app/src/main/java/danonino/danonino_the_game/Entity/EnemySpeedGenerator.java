@@ -30,16 +30,16 @@ public class EnemySpeedGenerator {
 
     public int generateXspeed(){
         Random rand = new Random();
-        int minNumber = 4;
-        int maxNumber = 20;
+        int minNumber = -10;
+        int maxNumber = 10;
         int generater = rand.nextInt((maxNumber-minNumber)+minNumber)+minNumber;
         return generater;
     }
 
     public int generateYspeed(){
         Random rand = new Random();
-        int minNumber = -2;
-        int maxNumber = 2;
+        int minNumber = 4;
+        int maxNumber = 20;
         int generater = rand.nextInt((maxNumber-minNumber)+minNumber)+minNumber;
         return generater;
     }

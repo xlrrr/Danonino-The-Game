@@ -21,7 +21,7 @@ package danonino.danonino_the_game.GameObjects.PowerUps;
 
 import android.os.SystemClock;
 
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 
 public class AquaShield extends PowerUp {
     private static final String SHIELD_ABOUT = "A magic aqua shield will protect Ruffin for 12 seconds";

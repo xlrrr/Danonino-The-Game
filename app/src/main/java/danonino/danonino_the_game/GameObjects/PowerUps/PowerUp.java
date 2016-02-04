@@ -19,7 +19,7 @@
 
 package danonino.danonino_the_game.GameObjects.PowerUps;
 
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 
 public abstract class PowerUp {
 
