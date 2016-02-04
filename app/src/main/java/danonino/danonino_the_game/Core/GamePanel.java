@@ -260,7 +260,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             final int savedState = canvas.save();
             canvas.scale(scaleFactorX, scaleFactorY);
             this.bg.draw(canvas);
-            this.bgFront.draw(canvas);
             this.progress.draw(canvas);
 
             //draw bubbles
@@ -277,6 +276,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             if(this.event != null) {
                 this.event.draw(canvas);
             }
+
+            this.bgFront.draw(canvas);
 
             if(!this.gameOver){
                 if(this.joystickEnabled) {
