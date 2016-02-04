@@ -112,9 +112,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     @Override
     public void surfaceCreated(SurfaceHolder holder){
         this.bg = new Background(Data.getImage(Data.BACKGROUND));
-        this.bg.setVector(-1);
+        this.bg.setVector(0);
         this.bgFront = new Background(Data.getImage(Data.FRONTGROUND));
-        this.bgFront.setVector(-5);
+        this.bgFront.setVector(0);
         this.joystickEnabled = this.readSettings("joystick");
         this.joystickLeft = this.readSettings("left");
         this.joystick = new Joystick(Data.getImage(Data.JOYSTICK_INNER),

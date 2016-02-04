@@ -63,7 +63,7 @@ public class EnemyFishFactory {
         switch (currentLevel){
             case ONE:
                 current=enemyFish.get(LEVEL_1);
-                numOfAnimations=4;
+                numOfAnimations = 6;
                 currentNumRows = 1;
                 currentNumFrames = 5;
                 break;
@@ -102,7 +102,7 @@ public class EnemyFishFactory {
     private static Level getLevel(){
         Random rand = new Random();
         int current = rand.nextInt(10000);
-        if(current%10==0){
+        /*if(current%10==0){
             return Level.FOUR;
         }
         else if(current%8==0){
@@ -110,7 +110,7 @@ public class EnemyFishFactory {
         }
         else if(current % 6==0){
             return Level.TWO;
-        }
+        }*/
         return Level.ONE;
     }
 }

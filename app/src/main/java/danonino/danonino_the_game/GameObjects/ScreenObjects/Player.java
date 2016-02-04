@@ -30,8 +30,8 @@ import danonino.danonino_the_game.GameObjects.PowerUps.PowerUp;
 import danonino.danonino_the_game.Music.SoundManager;
 
 public class Player extends ScreenObject {
-    private static final int PLAYER_NUMROWS = 8;
-    private static final int PLAYER_NUMFRAMES = 8;
+    private static final int PLAYER_NUMROWS = 2;
+    private static final int PLAYER_NUMFRAMES = 7;
     private static final int STARTING_PLAYER_SCORE = 0;
     private static final Level STARTING_PLAYER_LEVEL = Level.ONE;
     private static PowerUp powerUp;

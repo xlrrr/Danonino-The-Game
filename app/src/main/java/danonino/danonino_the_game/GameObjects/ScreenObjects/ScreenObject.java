@@ -215,9 +215,14 @@ public abstract class ScreenObject extends GameObject {
     }
 
     public void updateBitmap(){
-        Bitmap resized = Bitmap.createScaledBitmap(fishImage,
+        /*Bitmap resized = Bitmap.createScaledBitmap(fishImage,
                 (int)(fishImage.getWidth()*0.25*(this.getCurrentLevel().getValue()+1)),
                 (int)(fishImage.getHeight()*0.25*(this.getCurrentLevel().getValue()+1)),
+                true);
+                */
+        Bitmap resized = Bitmap.createScaledBitmap(fishImage,
+                (int)(fishImage.getWidth()*0.95),
+                (int)(fishImage.getHeight()*0.95),
                 true);
         this.getFrameDimensions(resized);
         this.image = this.createBitmap(resized);
