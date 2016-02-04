@@ -1,0 +1,34 @@
+<!--
+  ~ Copyright © 2015 Danonino The Game
+  ~
+  ~ This file is part of "Danonino The Game".
+  ~
+  ~ "Danonino The Game" is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ "Danonino The Game" is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with "Danonino The Game".  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="app_name">Danonino The Game</string>
+    <string name="action_settings">Settings</string>
+    <string name="Splash">spash</string>
+    <string name="start">Start Game</string>
+    <string name="quit">Quit</string>
+    <string name="menu">Menu</string>
+    <string name="logo">Danonino The Game</string>
+    <string name="options">options</string>
+    <string name="logo2">Ruffin</string>
+    <string name="logo3">the Fish</string>
+    <string name="sound">Sound</string>
+    <string name="banner_ad_unit_id">ca-app-pub-7681127266395938/2544574007</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-7681127266395938/5040382006</string>
+</resources>
