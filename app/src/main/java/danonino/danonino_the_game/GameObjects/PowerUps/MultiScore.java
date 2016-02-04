@@ -21,7 +21,7 @@ package danonino.danonino_the_game.GameObjects.PowerUps;
 
 import android.os.SystemClock;
 
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 
 public class MultiScore extends PowerUp {
     private static final String MULTISCORE_ABOUT = "Multiplies all the score Ruffing gains for 10 seconds.";

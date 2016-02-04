@@ -17,7 +17,7 @@
  * along with "Danonino The Game".  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package danonino.danonino_the_game.GameObjects.Fish;
+package danonino.danonino_the_game.GameObjects.ScreenObjects;
 
 import android.graphics.Bitmap;
 
@@ -29,7 +29,7 @@ import danonino.danonino_the_game.Enums.Level;
 import danonino.danonino_the_game.GameObjects.PowerUps.PowerUp;
 import danonino.danonino_the_game.Music.SoundManager;
 
-public class Player extends Fish {
+public class Player extends ScreenObject {
     private static final int PLAYER_NUMROWS = 8;
     private static final int PLAYER_NUMFRAMES = 8;
     private static final int STARTING_PLAYER_SCORE = 0;
@@ -88,7 +88,7 @@ public class Player extends Fish {
         super.setDead(dead);
     }
 
-    public void tryEat(Fish enemy) {
+    public void tryEat(ScreenObject enemy) {
         if(this.isDead()){
             return;
         }

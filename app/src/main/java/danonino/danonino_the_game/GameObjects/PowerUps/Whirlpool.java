@@ -21,7 +21,7 @@ package danonino.danonino_the_game.GameObjects.PowerUps;
 
 import android.os.SystemClock;
 
-import danonino.danonino_the_game.GameObjects.Fish.Player;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 
 public class Whirlpool extends PowerUp {
     private static final String FRENZY_ABOUT = "Ruffin enrages for 8 seconds and can eat almost everything";

@@ -134,23 +134,10 @@ public abstract class GameObject {
 
     protected int getRandomX() {
         Random rand = new Random();
-        int minNumber = 0;
-        int maxNumber = 10000;
+        int minNumber = this.getWidth();
+        int maxNumber = GamePanel.getWIDTH()-this.getWidth();
         int generated = rand.nextInt((maxNumber-minNumber)+minNumber)+minNumber;
-
-        if(generated%2==0){
-            return (GamePanel.getWIDTH()+this.getWidth());
-        }
-        return -(this.getWidth());
+        return generated;
     }
-
-    protected int getRandomY() {
-        Random rand = new Random();
-        int minNumber =this.getHeight()/2;
-        int maxNumber = GamePanel.getHEIGHT()-this.getHeight()-this.getHeight()/2;
-
-        return rand.nextInt((maxNumber-minNumber)+minNumber)+minNumber;
-    }
-
 }
 

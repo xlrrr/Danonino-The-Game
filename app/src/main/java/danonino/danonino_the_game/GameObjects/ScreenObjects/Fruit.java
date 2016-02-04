@@ -17,7 +17,7 @@
  * along with "Danonino The Game".  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package danonino.danonino_the_game.GameObjects.Fish;
+package danonino.danonino_the_game.GameObjects.ScreenObjects;
 
 import android.graphics.Bitmap;
 
@@ -25,12 +25,12 @@ import danonino.danonino_the_game.Core.GamePanel;
 import danonino.danonino_the_game.Entity.EnemySpeedGenerator;
 import danonino.danonino_the_game.Enums.Level;
 
-public class Enemy extends Fish {
+public class Fruit extends ScreenObject {
     private EnemySpeedGenerator speedGen = new EnemySpeedGenerator();
 
-    public Enemy(Bitmap res, Level level,int numRows, int numFrames) {
+    public Fruit(Bitmap res, Level level, int numRows, int numFrames) {
         super(res, level, numRows, numFrames);
-        this.setSpeedX(directionMultiplier* speedGen.generateXspeed());
+        this.setSpeedX(0);
         this.setSpeedY(speedGen.generateYspeed());
         this.setPlaying(true);
     }
@@ -41,17 +41,11 @@ public class Enemy extends Fish {
     }
 
     @Override
-    public void setX(int x) {
-        if(x+this.getWidth()<-10||x-this.getWidth()>GamePanel.getWIDTH()+10){
+    public void setY(int y) {
+        if(y-this.getHeight()>GamePanel.getHEIGHT()+10){
             this.setDead(true);
             return;
         }
-        super.setX(x);
-    }
-
-    @Override
-    public void setSpeedX(int speedX) {
-        speedX=(int)(speedX*(this.getCurrentLevel().getValue()*0.5));
-        super.setSpeedX(speedX);
+        super.setY(y);
     }
 }
