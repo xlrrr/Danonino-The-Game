@@ -29,8 +29,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import danonino.danonino_the_game.GameObjects.Event.Event;
-import danonino.danonino_the_game.GameObjects.Event.Goldfish;
-import danonino.danonino_the_game.GameObjects.Event.Jellyfish;
+import danonino.danonino_the_game.GameObjects.Event.Danonino;
 
 public class EventFactory {
 
@@ -68,9 +67,9 @@ public class EventFactory {
         Random rand = new Random();
         int current = rand.nextInt(10000);
         if(current%2==0){
-            return new Jellyfish(events.get(JELLYFISH));
+            //return new Jellyfish(events.get(JELLYFISH));
         }
-        return new Goldfish(events.get(GOLDFISH));
+        return new Danonino(events.get(GOLDFISH));
     }
 
     private static boolean getIsReady() {

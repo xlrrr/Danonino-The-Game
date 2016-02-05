@@ -47,7 +47,7 @@ import danonino.danonino_the_game.Factory.BubbleFactory;
 import danonino.danonino_the_game.Factory.EnemyFishFactory;
 import danonino.danonino_the_game.Factory.EventFactory;
 import danonino.danonino_the_game.GameObjects.Event.Event;
-import danonino.danonino_the_game.GameObjects.Event.Goldfish;
+import danonino.danonino_the_game.GameObjects.Event.Danonino;
 import danonino.danonino_the_game.GameObjects.ScreenObjects.Fruit;
 import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 import danonino.danonino_the_game.Music.SoundManager;
@@ -202,7 +202,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                 this.event.update();
                 if(this.event.intersects(this.player,60,60)){
                     this.event.executeEvent(this.player);
-                    if(this.event.getClass()== Goldfish.class){
+                    if(this.event.getClass()== Danonino.class){
                         this.event=null;
                     }
                 }

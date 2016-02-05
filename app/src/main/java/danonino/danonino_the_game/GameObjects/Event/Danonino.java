@@ -26,12 +26,12 @@ import danonino.danonino_the_game.Entity.ScoreContainer;
 import danonino.danonino_the_game.GameObjects.ScreenObjects.Player;
 import danonino.danonino_the_game.Music.SoundManager;
 
-public class Goldfish extends Event {
-    private static final int GOLDFISH_NUMROWS = 1;
-    private static final int GOLDFISH_NUMFRAMES = 6;
+public class Danonino extends Event {
+    private static final int DANONINO_NUMROWS = 1;
+    private static final int DANONINO_NUMFRAMES = 6;
 
-    public Goldfish(Bitmap res) {
-        super(res, GOLDFISH_NUMROWS, GOLDFISH_NUMFRAMES);
+    public Danonino(Bitmap res) {
+        super(res, DANONINO_NUMROWS, DANONINO_NUMFRAMES);
     }
 
     @Override
