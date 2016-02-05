@@ -43,17 +43,18 @@
         android:id="@+id/start_btn"
         android:longClickable="true"
         android:focusableInTouchMode="false"
+        android:layout_marginBottom="147dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/label"
         android:background="@drawable/label"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/settings_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp" />
 
 
 </RelativeLayout>
