@@ -22,7 +22,9 @@
 
 package danonino.danonino_the_game.Core;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.os.SystemClock;
@@ -35,6 +37,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import danonino.danonino_the_game.Core.Activities.Game;
+import danonino.danonino_the_game.Core.Activities.MoreGamesMenu;
 import danonino.danonino_the_game.Core.Labels.GameOver;
 import danonino.danonino_the_game.Core.Labels.PowerUp;
 import danonino.danonino_the_game.Entity.Background;
@@ -164,7 +168,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                         this.powerUpLabel=null;
                     }
                     else if(GameOver.onTouch(event)==2){
-                        Toast.makeText(this.getContext(), "Nqa poveche igri", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getContext(), MoreGamesMenu.class);
+                        getContext().startActivity(i);
                     }
                 }
                 else if(this.powerUpLabel!=null){
@@ -225,9 +230,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                 this.player.tryEat(currentEnemy);
             }
         }
-
-        if (this.enemies.size() <= 10&&!this.player.isDead()) {
-            initFish();
+        if(!this.player.isDead()) {
+            if (this.enemies.size() <= 10) {
+                initFish();
+            }
         }
 
         if(this.player.isDead()&&!this.alreadyEnded){

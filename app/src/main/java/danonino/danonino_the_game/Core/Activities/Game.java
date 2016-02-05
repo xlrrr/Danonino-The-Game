@@ -61,7 +61,6 @@ public class Game extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setBackgroundDrawable(new BitmapDrawable(getResources(), Data.getImage(Data.BACKGROUND)));
         //turn title off
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
