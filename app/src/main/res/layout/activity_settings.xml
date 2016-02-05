@@ -31,7 +31,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/scroll"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="80dp"
@@ -48,7 +48,9 @@
             android:checked="true"
             android:layout_below="@+id/textView2"
             android:layout_alignLeft="@+id/textView2"
-            android:layout_alignStart="@+id/textView2" />
+            android:layout_alignStart="@+id/textView2"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_alignEnd="@+id/textView2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,13 +58,10 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="MUSIC"
             android:id="@+id/textView2"
-            android:textSize="25dp"
-            android:layout_alignTop="@+id/joy_lbl"
-            android:layout_toLeftOf="@+id/joy_lbl"
-            android:layout_toStartOf="@+id/joy_lbl"
-            android:layout_marginRight="36dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginTop="20dp" />
+            android:textSize="50dp"
+            android:layout_alignTop="@+id/joy_tbtn"
+            android:layout_toLeftOf="@+id/radioGroup"
+            android:layout_toStartOf="@+id/radioGroup" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,13 +69,10 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="SOUND"
             android:id="@+id/textView5"
-            android:textSize="25dp"
-            android:layout_alignTop="@+id/joy_lbl"
-            android:layout_toRightOf="@+id/joy_lbl"
-            android:layout_toEndOf="@+id/joy_lbl"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="20dp" />
+            android:textSize="50dp"
+            android:layout_above="@+id/music_tbtn"
+            android:layout_toRightOf="@+id/radioGroup"
+            android:layout_toEndOf="@+id/radioGroup" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,21 +80,20 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="JOYSTICK POSSITION"
             android:id="@+id/joypos_lbl"
-            android:textSize="25dp"
+            android:textSize="50dp"
+            android:enabled="true"
             android:layout_above="@+id/radioGroup"
-            android:layout_centerHorizontal="true"
-            android:enabled="true" />
+            android:layout_centerHorizontal="true" />
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:id="@+id/radioGroup"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="157dp"
             android:weightSum="1"
             android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/joypos_lbl"
-            android:layout_alignStart="@+id/joypos_lbl">
+            android:layout_centerHorizontal="true">
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -111,7 +106,8 @@
                 android:layout_alignTop="@+id/right"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="50dp" />
+                android:layout_marginRight="50dp"
+                android:textSize="40dp" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -124,7 +120,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:checked="false"
-                android:layout_marginLeft="50dp" />
+                android:layout_marginLeft="50dp"
+                android:textSize="40dp" />
         </RadioGroup>
 
         <ToggleButton
@@ -135,6 +132,8 @@
             android:enabled="true"
             android:checked="true"
             android:layout_below="@+id/textView5"
+            android:layout_alignLeft="@+id/textView5"
+            android:layout_alignStart="@+id/textView5"
             android:layout_alignRight="@+id/textView5"
             android:layout_alignEnd="@+id/textView5" />
 
@@ -145,8 +144,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="MOVEMENT"
             android:id="@+id/joy_lbl"
-            android:textSize="25dp"
-            android:layout_marginTop="56dp"
+            android:textSize="50dp"
+            android:layout_marginTop="151dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
@@ -157,10 +156,13 @@
             android:textColor="#0a0101"
             android:enabled="true"
             android:checked="true"
-            android:layout_below="@+id/joy_lbl"
-            android:layout_centerHorizontal="true"
             android:textOn="Joystick"
-            android:textOff="Touch" />
+            android:textOff="Touch"
+            android:layout_below="@+id/joy_lbl"
+            android:layout_alignLeft="@+id/joy_lbl"
+            android:layout_alignStart="@+id/joy_lbl"
+            android:layout_alignRight="@+id/joy_lbl"
+            android:layout_alignEnd="@+id/joy_lbl" />
 
     </RelativeLayout>
 </RelativeLayout>
