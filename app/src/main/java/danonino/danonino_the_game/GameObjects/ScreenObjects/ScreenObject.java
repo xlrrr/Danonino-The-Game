@@ -164,9 +164,7 @@ public abstract class ScreenObject extends GameObject {
 
     @Override
     public void setSpeedX(int speedX) {
-        if(this.getGold()||this.isInWhirlpool()){
-            speedX*=2;
-        }
+
         super.setSpeedX(speedX);
     }
 
