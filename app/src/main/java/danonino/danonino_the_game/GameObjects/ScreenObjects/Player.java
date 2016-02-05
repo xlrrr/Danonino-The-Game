@@ -99,7 +99,7 @@ public class Player extends ScreenObject {
         }
         if (this.getCurrentLevel().isBiggerThanOrEqual(enemy.getCurrentLevel())||this.isInWhirlpool()) {
             this.setIsEating(true);
-            if(this.intersects(enemy,40,50)) {
+            if(this.intersects(enemy,40, (int) (enemy.getSpeedY()*2.5))) {
                 enemy.setDead(true);
                 int currentEnemyLevel = enemy.getCurrentLevel().getValue();
                 this.addScore(currentEnemyLevel);

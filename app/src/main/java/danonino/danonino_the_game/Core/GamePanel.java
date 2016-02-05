@@ -228,7 +228,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
 
             currentEnemy.update();
 
-            if (this.player.intersects(currentEnemy,120,50)) {
+            if (this.player.intersects(currentEnemy,40,(int) (currentEnemy.getSpeedY()*6.6666666666666666666666666666667))) {
                 this.player.tryEat(currentEnemy);
             }
         }

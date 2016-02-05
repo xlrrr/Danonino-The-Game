@@ -28,7 +28,7 @@ import danonino.danonino_the_game.Music.SoundManager;
 
 public class Danonino extends Event {
     private static final int DANONINO_NUMROWS = 1;
-    private static final int DANONINO_NUMFRAMES = 6;
+    private static final int DANONINO_NUMFRAMES = 5;
 
     public Danonino(Bitmap res) {
         super(res, DANONINO_NUMROWS, DANONINO_NUMFRAMES);
@@ -42,14 +42,12 @@ public class Danonino extends Event {
         player.setIsEating(true);
         SoundManager.playSound(SoundManager.EAT_GOLD);
         ScoreContainer.addGlobalScore(517);
-        player.setGold(true);
-        player.setCurrentAction(-1);
+
         Thread thr = new Thread(new Runnable() {
             @Override
             public void run() {
                 SystemClock.sleep(8000);
-                player.setGold(false);
-                player.setCurrentAction(-1);
+
             }
         });
         thr.start();

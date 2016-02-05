@@ -39,6 +39,11 @@ public abstract class GameObject {
 
     protected boolean turnedRight=true;
     protected int speedX = 0;
+
+    public int getSpeedY() {
+        return speedY;
+    }
+
     protected int speedY = 0;
     protected int directionMultiplier;
     private boolean playing;
