@@ -38,12 +38,12 @@ import java.util.ArrayList;
 import danonino.danonino_the_game.Core.Labels.GameOver;
 import danonino.danonino_the_game.Core.Labels.PowerUp;
 import danonino.danonino_the_game.Entity.Background;
-import danonino.danonino_the_game.Entity.Bubble;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Butterfly;
 import danonino.danonino_the_game.Entity.Joystick;
 import danonino.danonino_the_game.Entity.ProgressBar;
 import danonino.danonino_the_game.Entity.ScoreContainer;
 import danonino.danonino_the_game.Entity.ShardsContainer;
-import danonino.danonino_the_game.Factory.BubbleFactory;
+import danonino.danonino_the_game.Factory.ButterflyFactory;
 import danonino.danonino_the_game.Factory.EnemyFishFactory;
 import danonino.danonino_the_game.Factory.EventFactory;
 import danonino.danonino_the_game.GameObjects.Event.Event;
@@ -63,7 +63,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     private Player player;
     private ProgressBar progress;
     private ArrayList<Fruit> enemies;
-    private ArrayList<Bubble> bubbles;
+    private ArrayList<Butterfly> butterflies;
     private Joystick joystick;
     private Event event;
     private boolean joystickEnabled;
@@ -120,7 +120,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
         this.joystick = new Joystick(Data.getImage(Data.JOYSTICK_INNER),
                 Data.getImage(Data.JOYSTICK_OUTER),this.joystickLeft,this.joystickEnabled);
         this.enemies = new ArrayList<>();
-        this.bubbles = new ArrayList<>();
+        this.butterflies = new ArrayList<>();
         this.initPlayerFeatures();
         this.initFish();
         if(Player.getPowerUp()!=null){
@@ -212,12 +212,12 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             this.event=EventFactory.Create();
         }
 
-        for (int i = 0; i < this.bubbles.size(); i++) {
-            Bubble currentBubble = this.bubbles.get(i);
-            if(currentBubble.isOutsideScreen()){
-                this.bubbles.remove(i);
+        for (int i = 0; i < this.butterflies.size(); i++) {
+            Butterfly currentButterfly = this.butterflies.get(i);
+            if(currentButterfly.isOutsideScreen()){
+                this.butterflies.remove(i);
             }
-            currentBubble.update();
+            currentButterfly.update();
         }
         for (int i = 0; i < this.enemies.size(); i++) {
             Fruit currentEnemy = this.enemies.get(i);
@@ -262,8 +262,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             this.bg.draw(canvas);
             this.progress.draw(canvas);
 
-            //draw bubbles
-            for(Bubble b: this.bubbles){
+            //draw butterflies
+            for(Butterfly b: this.butterflies){
                 b.draw(canvas);
             }
             //draw enemies
@@ -300,7 +300,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     }
 
     public void initBubbles() {
-        this.bubbles.add(BubbleFactory.Create());
+        this.butterflies.add(ButterflyFactory.Create());
     }
 
     public static void setProportions(Context context) {

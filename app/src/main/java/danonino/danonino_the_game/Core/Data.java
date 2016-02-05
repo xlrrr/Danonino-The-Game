@@ -61,7 +61,7 @@ public class Data {
         images.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.againbtn));
         images.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.continuebtn));
         images.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.gameover));
-        images.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.bubble));
+        images.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.butterfly));
         images.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.pattern));
         images.add(BitmapFactory.decodeResource(context.getResources(), R.drawable.powerupbtn));
 

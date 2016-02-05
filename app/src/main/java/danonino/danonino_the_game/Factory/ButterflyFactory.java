@@ -8,13 +8,13 @@ import java.util.Random;
 
 import danonino.danonino_the_game.Core.Data;
 import danonino.danonino_the_game.Core.GamePanel;
-import danonino.danonino_the_game.Entity.Bubble;
+import danonino.danonino_the_game.GameObjects.ScreenObjects.Butterfly;
 
-public class BubbleFactory {
+public class ButterflyFactory {
 
-    public static Bubble Create(){
-        Bubble bubble = new Bubble(Data.getImage(Data.BUBBLE),getRandomX(), GamePanel.getHEIGHT(), getRandomSpeed());
-        return bubble;
+    public static Butterfly Create(){
+        Butterfly butterfly = new Butterfly(Data.getImage(Data.BUBBLE),getRandomX(), GamePanel.getHEIGHT(), getRandomSpeed());
+        return butterfly;
     }
 
     private static int getRandomX(){
