@@ -43,7 +43,6 @@ public class GameButton {
         this.bg = bg;
 
         this.btn_rect = new RectF(0, 0, width, height);
-        y+=this.bg.getHeight()/2;
         this.setPosition(x,y);
     }
 

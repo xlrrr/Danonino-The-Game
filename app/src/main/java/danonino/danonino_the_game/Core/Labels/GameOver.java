@@ -46,10 +46,10 @@ public class GameOver {
     public static void loadGameOverContent(){
         gameOverLbl = Data.getImage(Data.GAMEOVER_LABEL);
         x = GamePanel.getWIDTH()/2-gameOverLbl.getWidth()/2;
-        y = GamePanel.getHEIGHT()/2-gameOverLbl.getHeight();
-        int btnY = y+gameOverLbl.getHeight();
-        playAgainBtn = new GameButton(Data.getImage(Data.PLAY_AGAIN_BTN),x,btnY);
-        int btnX= (int) (x+playAgainBtn.width);
+        y = GamePanel.getHEIGHT()-gameOverLbl.getHeight();
+        int btnY = GamePanel.getHEIGHT()-Data.getImage(Data.PLAY_AGAIN_BTN).getHeight();;
+        playAgainBtn = new GameButton(Data.getImage(Data.PLAY_AGAIN_BTN),0,btnY);
+        int btnX= GamePanel.getWIDTH()-Data.getImage(Data.CONTINUE_BTN).getWidth();
         continueBtn = new GameButton(Data.getImage(Data.CONTINUE_BTN),btnX,btnY);
     }
 

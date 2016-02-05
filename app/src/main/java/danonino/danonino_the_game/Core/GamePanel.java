@@ -164,14 +164,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                         this.powerUpLabel=null;
                     }
                     else if(GameOver.onTouch(event)==2){
-                        if(ShardsContainer.getShards()>=3) {
-                            ShardsContainer.remove(3);
-                            this.setGameOver(false);
-                            this.player.setDead(false);
-                            this.alreadyEnded = false;
-                        }else{
-                            Toast.makeText(this.getContext(), "Not enough shards", Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(this.getContext(), "Nqa poveche igri", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else if(this.powerUpLabel!=null){
@@ -233,7 +226,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             }
         }
 
-        if (this.enemies.size() <= 10) {
+        if (this.enemies.size() <= 10&&!this.player.isDead()) {
             initFish();
         }
 
@@ -277,8 +270,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                 this.event.draw(canvas);
             }
 
-            this.bgFront.draw(canvas);
-
             if(!this.gameOver){
                 if(this.joystickEnabled) {
                     this.joystick.draw(canvas);
@@ -291,6 +282,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
             else {
                 GameOver.draw(canvas);
             }
+            this.bgFront.draw(canvas);
             canvas.restoreToCount(savedState);
         }
     }

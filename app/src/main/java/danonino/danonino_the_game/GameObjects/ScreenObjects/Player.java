@@ -151,27 +151,7 @@ public class Player extends ScreenObject {
 
     private void levelUp(){
         SoundManager.playSound(SoundManager.LEVELUP);
-        int currentLevel = this.getCurrentLevel().getValue();
-        currentLevel+=1;
-        Level newLevel;
-        switch (currentLevel){
-            case 2:
-                newLevel=Level.TWO;
-                break;
-
-            case 3:
-                newLevel=Level.THREE;
-                break;
-
-            case 4:
-                newLevel=Level.FOUR;
-                break;
-            default:
-                ShardsContainer.add(1);
-                newLevel=Level.ONE;
-                break;
-        }
-        this.setCurrentLevel(newLevel);
+        this.setDead(true);
     }
 
 }

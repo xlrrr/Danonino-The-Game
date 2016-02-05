@@ -20,12 +20,14 @@
 package danonino.danonino_the_game.Core.Activities;
 
 import android.app.Activity;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import danonino.danonino_the_game.Core.Data;
 import danonino.danonino_the_game.R;
 import danonino.danonino_the_game.Core.GamePanel;
 import danonino.danonino_the_game.Core.Labels.GameOver;
@@ -59,6 +61,7 @@ public class Game extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setBackgroundDrawable(new BitmapDrawable(getResources(), Data.getImage(Data.BACKGROUND)));
         //turn title off
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
